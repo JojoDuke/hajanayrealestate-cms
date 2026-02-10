@@ -4,11 +4,11 @@ import { Grid, } from '@material-ui/core';
 /* OWN */
 import Controls from "../components/controls/Controls";
 import { useForm, Form } from '../components/useForm';
-import BackendRequest from '../utils/BackendRequest';
+
 import Popup from '../components/Popup';
 import AddingImages from '../components/AddingImages/AddingImages';
 import ConfirmDialog from '../components/ConfirmDialog';
-import { NavigateBeforeSharp } from '@material-ui/icons';
+
 
 
 const initialFValues = {
@@ -42,8 +42,8 @@ export default function HouseForm(props) {
     const [openPopupExteriorGallery, setOpenPopupExteriorGallery] = useState(false);
     const [openPopupInteriorGallery, setOpenPopupInteriorGallery] = useState(false);
     const [openPopupGroundPlanGallery, setOpenPopupGroundPlanGallery] = useState(false);
-    const [ editorOneChanged, setEditorOneChanged ] = useState(false);
-    const [ editorTwoChanged, setEditorTwoChanged ] = useState(false);
+    const [editorOneChanged, setEditorOneChanged] = useState(false);
+    const [editorTwoChanged, setEditorTwoChanged] = useState(false);
     const [confirmDialog, setConfirmDialog] = useState({ isOpen: false, title: '', subTitle: '' })
 
     const validate = (fieldValues = values) => {
@@ -145,6 +145,7 @@ export default function HouseForm(props) {
             setValues({
                 ...recordForEdit
             })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [recordForEdit])
 
     //render all components after it spreads data from the recordForEdit to prevent loop in TextEditor
@@ -152,7 +153,7 @@ export default function HouseForm(props) {
         return (
             <>
                 <Form onSubmit={handleSubmit}>
-                    <Grid container style={{width: '98%'}} spacing={2}>
+                    <Grid container style={{ width: '98%' }} spacing={2}>
                         <Grid item xs={12} sm={6} md={4}>
                             <Controls.Input
                                 name="name"
@@ -180,7 +181,7 @@ export default function HouseForm(props) {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            
+
                             <Controls.TextEditor
                                 save={handleTextEditorSave}
                                 initialValues={values.locality}
@@ -206,7 +207,7 @@ export default function HouseForm(props) {
                                 value={values.disposition}
                                 onChange={handleInputChange}
                                 error={errors.disposition}
-                            />    
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Controls.Input
@@ -215,8 +216,8 @@ export default function HouseForm(props) {
                                 value={values.parcel_number}
                                 onChange={handleInputChange}
                                 error={errors.parcel_number}
-                            />  
-                        </Grid>      
+                            />
+                        </Grid>
                         <Grid item xs={12} sm={4} >
                             <Controls.Input
                                 label="Užitná plocha v m²"
@@ -224,9 +225,9 @@ export default function HouseForm(props) {
                                 value={values.floor_area}
                                 onChange={handleInputChange}
                                 error={errors.floor_area}
-                            /> 
+                            />
                         </Grid>
-                        <Grid item xs={12} sm={4} >   
+                        <Grid item xs={12} sm={4} >
                             <Controls.Input
                                 label="Plocha pozemku v m²"
                                 name="lot_area"
@@ -235,7 +236,7 @@ export default function HouseForm(props) {
                                 error={errors.lot_area}
                             />
                         </Grid>
-                        <Grid item xs={12} sm={4} > 
+                        <Grid item xs={12} sm={4} >
                             <Controls.Input
                                 label="Zastavěná plocha v m²"
                                 name="builtup_area"
@@ -302,14 +303,14 @@ export default function HouseForm(props) {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+                            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                                 <Controls.Button
                                     color="default"
                                     text="Změnit úvodní obrázek"
-                                    onClick={()=>setOpenPopupTitleImage(true)} />
+                                    onClick={() => setOpenPopupTitleImage(true)} />
 
-                                <div style={{height: '40px', marginLeft: '15px'}}>
-                                    <img src={"https://api.moderni-zelesice.cz" + values.title_image} style={{height: '100%', width: 'auto'}} />
+                                <div style={{ height: '40px', marginLeft: '15px' }}>
+                                    <img src={"https://api.moderni-zelesice.cz" + values.title_image} style={{ height: '100%', width: 'auto' }} alt="Title" />
                                 </div>
                             </div>
                         </Grid>
@@ -317,22 +318,22 @@ export default function HouseForm(props) {
                             <Controls.Button
                                 color="default"
                                 text="Přidat obrázky do galerie exteriér"
-                                onClick={()=>setOpenPopupExteriorGallery(true)} />
+                                onClick={() => setOpenPopupExteriorGallery(true)} />
                         </Grid>
                         <Grid item xs={12}>
                             <Controls.Button
                                 color="default"
                                 text="Přidat obrázky do galerie interiér"
-                                onClick={()=>setOpenPopupInteriorGallery(true)} />
+                                onClick={() => setOpenPopupInteriorGallery(true)} />
                         </Grid>
 
                         <Grid item xs={12}>
-                            <div style={{marginTop: '10px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                                    
+                            <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+
                                 <Controls.Button
                                     color="default"
                                     text="Přidat obrázky do galerie půdorysy"
-                                    onClick={()=>setOpenPopupGroundPlanGallery(true)} />
+                                    onClick={() => setOpenPopupGroundPlanGallery(true)} />
 
                                 <Controls.Button
                                     type="submit"
@@ -341,13 +342,13 @@ export default function HouseForm(props) {
                         </Grid>
                         <Grid item xs={12}>
                             <h2>Přiložené&nbsp;obrázky v&nbsp;galerii půdorysy</h2>
-                            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%'}}>
+                            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%' }}>
                                 {values.ground_plan_images.map((img, idx) => {
-                                    
+
                                     let src = "https://api.moderni-zelesice.cz" + img;
 
                                     return (
-                                        <img src={src} style={{width: '150px', margin: '7px', objectFit: 'cover'}} />
+                                        <img src={src} style={{ width: '150px', margin: '7px', objectFit: 'cover' }} alt="Ground Plan" />
                                     );
                                 })}
                             </div>
@@ -355,27 +356,27 @@ export default function HouseForm(props) {
 
                         <Grid item xs={12}>
                             <h2>Přiložené&nbsp;obrázky v&nbsp;galerii interiér</h2>
-                            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%'}}>
+                            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%' }}>
                                 {values.interier_images.map((img, idx) => {
-                                    
+
                                     let src = "https://api.moderni-zelesice.cz" + img;
 
                                     return (
-                                        <img src={src} style={{width: '150px', margin: '7px', objectFit: 'cover'}} />
+                                        <img src={src} style={{ width: '150px', margin: '7px', objectFit: 'cover' }} alt="Interior" />
                                     );
                                 })}
                             </div>
                         </Grid>
-                    
+
                         <Grid item xs={12}>
                             <h2>Přiložené&nbsp;obrázky v&nbsp;galerii exteriér</h2>
-                            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%'}}>
+                            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100%' }}>
                                 {values.exterier_images.map((img, idx) => {
-                                    
+
                                     let src = "https://api.moderni-zelesice.cz" + img;
 
                                     return (
-                                        <img src={src} style={{width: '150px', margin: '7px', objectFit: 'cover'}} />
+                                        <img src={src} style={{ width: '150px', margin: '7px', objectFit: 'cover' }} alt="Exterior" />
                                     );
                                 })}
                             </div>
@@ -384,52 +385,52 @@ export default function HouseForm(props) {
                 </Form>
 
                 <Popup
-                title="Vyberte úvodní obrázek"
-                openPopup={openPopupTitleImage}
-                setOpenPopup={setOpenPopupTitleImage} >
+                    title="Vyberte úvodní obrázek"
+                    openPopup={openPopupTitleImage}
+                    setOpenPopup={setOpenPopupTitleImage} >
                     {(values.title_image !== null && values.images !== undefined) &&
-                    <AddingImages 
-                        updateImages={updateImages}
-                        initialImages={[values.title_image]}
-                        maxImages={1}
-                        name="title_image"
-                    />}
+                        <AddingImages
+                            updateImages={updateImages}
+                            initialImages={[values.title_image]}
+                            maxImages={1}
+                            name="title_image"
+                        />}
                 </Popup>
 
                 <Popup
-                title="Přidání obrázků do galerie exteriér"
-                openPopup={openPopupExteriorGallery}
-                setOpenPopup={setOpenPopupExteriorGallery} >
+                    title="Přidání obrázků do galerie exteriér"
+                    openPopup={openPopupExteriorGallery}
+                    setOpenPopup={setOpenPopupExteriorGallery} >
                     {(values.exterier_images !== null && values.exterier_images !== undefined) &&
-                    <AddingImages 
-                        updateImages={updateImages}
-                        initialImages={values.exterier_images}
-                        name="exterier_images"
-                    />}
+                        <AddingImages
+                            updateImages={updateImages}
+                            initialImages={values.exterier_images}
+                            name="exterier_images"
+                        />}
                 </Popup>
 
                 <Popup
-                title="Přidání obrázků do galerie interiér"
-                openPopup={openPopupInteriorGallery}
-                setOpenPopup={setOpenPopupInteriorGallery} >
+                    title="Přidání obrázků do galerie interiér"
+                    openPopup={openPopupInteriorGallery}
+                    setOpenPopup={setOpenPopupInteriorGallery} >
                     {(values.interier_images !== null && values.interier_images !== undefined) &&
-                    <AddingImages 
-                        updateImages={updateImages}
-                        initialImages={values.interier_images}
-                        name="interier_images"
-                    />}
+                        <AddingImages
+                            updateImages={updateImages}
+                            initialImages={values.interier_images}
+                            name="interier_images"
+                        />}
                 </Popup>
 
                 <Popup
-                title="Přidání obrázků do galerie půdorysy"
-                openPopup={openPopupGroundPlanGallery}
-                setOpenPopup={setOpenPopupGroundPlanGallery} >
+                    title="Přidání obrázků do galerie půdorysy"
+                    openPopup={openPopupGroundPlanGallery}
+                    setOpenPopup={setOpenPopupGroundPlanGallery} >
                     {(values.ground_plan_images !== null && values.ground_plan_images !== undefined) &&
-                    <AddingImages 
-                        updateImages={updateImages}
-                        initialImages={values.ground_plan_images}
-                        name="ground_plan_images"
-                    />}
+                        <AddingImages
+                            updateImages={updateImages}
+                            initialImages={values.ground_plan_images}
+                            name="ground_plan_images"
+                        />}
                 </Popup>
 
                 <ConfirmDialog
