@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c47b590c.chunk.css",
+    "main.js": "/static/js/main.3221558d.chunk.js",
+    "main.js.map": "/static/js/main.3221558d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f97b70da.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f97b70da.js.map",
+    "static/css/2.0c3d85b8.chunk.css": "/static/css/2.0c3d85b8.chunk.css",
+    "static/js/2.1e18e4c2.chunk.js": "/static/js/2.1e18e4c2.chunk.js",
+    "static/js/2.1e18e4c2.chunk.js.map": "/static/js/2.1e18e4c2.chunk.js.map",
+    "static/js/3.c5a84701.chunk.js": "/static/js/3.c5a84701.chunk.js",
+    "static/js/3.c5a84701.chunk.js.map": "/static/js/3.c5a84701.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.0c3d85b8.chunk.css.map": "/static/css/2.0c3d85b8.chunk.css.map",
+    "static/css/main.c47b590c.chunk.css.map": "/static/css/main.c47b590c.chunk.css.map",
+    "static/js/2.1e18e4c2.chunk.js.LICENSE.txt": "/static/js/2.1e18e4c2.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/nimbus-sans-regular.dd65e63a.otf",
+    "static/media/car.73eadec6.png": "/static/media/car.73eadec6.png",
+    "static/media/close.c39ccb73.svg": "/static/media/close.c39ccb73.svg",
+    "static/media/download_arrow.1a49be07.svg": "/static/media/download_arrow.1a49be07.svg",
+    "static/media/home_cover.313aa79c.jpg": "/static/media/home_cover.313aa79c.jpg",
+    "static/media/house.cfc971c6.png": "/static/media/house.cfc971c6.png",
+    "static/media/ImageMap.scss": "/static/media/interactive_houses_background.0db84c8e.jpg",
+    "static/media/LocalityPage.scss": "/static/media/locality_map.075c7d3e.jpg",
+    "static/media/ImageGallery.scss": "/static/media/magnifying_glass_icon.e1e1c439.svg",
+    "static/media/menu.b778cb17.svg": "/static/media/menu.b778cb17.svg",
+    "static/media/moderni_hajany_maly_1.d6688ef1.jpg": "/static/media/moderni_hajany_maly_1.d6688ef1.jpg",
+    "static/media/moderni_hajany_maly_2.0f3d11af.jpg": "/static/media/moderni_hajany_maly_2.0f3d11af.jpg",
+    "static/media/moderni_hajany_velky.738fb266.jpg": "/static/media/moderni_hajany_velky.738fb266.jpg",
+    "static/media/scrollDownArrow.a7ab9f9f.svg": "/static/media/scrollDownArrow.a7ab9f9f.svg",
+    "static/media/trees.18f4eed5.svg": "/static/media/trees.18f4eed5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f97b70da.js",
+    "static/css/2.0c3d85b8.chunk.css",
+    "static/js/2.1e18e4c2.chunk.js",
+    "static/css/main.c47b590c.chunk.css",
+    "static/js/main.3221558d.chunk.js"
+  ]
+}
