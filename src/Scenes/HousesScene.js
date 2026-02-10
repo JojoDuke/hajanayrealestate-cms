@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 /* MATERIAL UI */
 import { Paper, makeStyles, TableBody, TableRow, TableCell } from '@material-ui/core';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import HomeIcon from '@material-ui/icons/Home';
 
 /* OWN */
 import Popup from "../components/Popup";
