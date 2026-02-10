@@ -40,7 +40,6 @@ const GalleryScene = () => {
 
     const classes = useStyles();
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' })
-
     const { currentState, dispatch } = useContext(BackendDataContext);
     const [files, setFiles] = useState([])
 

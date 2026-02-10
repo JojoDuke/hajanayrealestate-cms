@@ -3,13 +3,13 @@ import React, { useState, useEffect, useContext } from 'react';
 /* MATERIAL UI */
 import { Paper, makeStyles, TableBody, TableRow, TableCell } from '@material-ui/core';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
-import HomeIcon from '@material-ui/icons/Home';
 
 /* OWN */
 import Popup from "../components/Popup";
 import useTable from "../components/useTable";
 import Controls from "../components/controls/Controls";
 import HouseForm from "../Forms/HouseForm";
+import HomeIcon from '@material-ui/icons/Home';
 import PageHeader from "../components/PageHeader";
 import Notification from "../components/Notification";
 import BackendRequest from '../utils/BackendRequest';
